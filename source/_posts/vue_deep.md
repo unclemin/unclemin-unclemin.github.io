@@ -22,3 +22,10 @@ categories: web前端
 
 Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`这个构造函数去描述一个`dom`节点,也就是操作`dom`时会优先操作`virtual dom`这个js对象，最后通过对比，将要改动的部分通知并更新到真实的`dom`中，进而减少渲染引擎绘制的次数，`virtual dom`就是一个中间桥梁
 
+
+### keep- alive
+
+- 保持组件的状态，避免重复渲染造成的性能损失
+- 只需要在动态组件的外面包裹就好
+
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtpzcn8nrj30y40c6mym.jpg)

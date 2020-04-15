@@ -13,6 +13,13 @@ links:
     desc: 大道自然，顺其自然，无为而治
     color: "#0078e7" # 代表色
     email: # 非必须
+  - url: https://xqpuer.github.io/
+    avatar: https://xqpuer.github.io/img/avatar.png
+    name: Enjoy
+    blog: Enjoy
+    desc: Never put off till tomorrow what you can do today
+    color: "#00c4b6" # 代表色
+    email: # 非必须
 # placeholder: 还没想好说些什么 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---

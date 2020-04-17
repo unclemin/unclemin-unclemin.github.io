@@ -105,7 +105,7 @@ deploy:
 # https://github.com/ele828/hexo-prism-plugin
 # 代码高亮
 prism_plugin:
-  mode: preprocess # realtime/preprocess
-  theme: dark
-  # line_number: true # default false
-  custom_css: "path/to/your/custom.css" # optional
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'vsc-dark-plus'     #主题选项
+  line_number: true    # default false
+  # custom_css: 'prism-material-dark.css'

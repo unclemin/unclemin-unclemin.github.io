@@ -35,7 +35,7 @@ Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`
   - `max` 缓存组件的最大值(类型为字符或者数字,可以控制缓存组件的个数，超出会移出第一个缓存)
 
 
-  ```vue
+  ```js
   <!-- 只缓存组件 name 为 c 或者 j 的组件-->
   <keep-alive include="c,j">
     <component></component>
@@ -45,14 +45,13 @@ Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`
   <keep-alive exclude="m"> 
     <component></component>
   </keep-alive>
-
   ```
 
   - 如果参数里面是正则表达式或者方法的话，就需要动态绑定
   - 同时使用了`include`和`exclude`，`exclude`的优先级会更高，以`exclude`的条件为主
 
 
-  ```vue
+  ```js
   <!-- 使用正则表达式，需使用 v-bind -->
   <keep-alive :include="/c|j/">
     <component></component>
@@ -61,28 +60,32 @@ Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`
   <keep-alive :include="includedComponents">
     <router-view></router-view>
   </keep-alive>
-
   ```
 
 
-  ```vue
+  ```js
   <!-- 动态判断，exclude 的优先级会更高,只缓存 c 组件-->
   <keep-alive :include="c,m" exclude="m" max="5">
     <component></component>
   </keep-alive>
-
   ```
 
   
 
   ### `keep-alive`的生命周期钩子函数
+
   ##### 页面第一次进入时的执行顺序
-    - `created` > `mounted` > `activated`(进入时触发的钩子函数)
-    - 退出时触发`deactivated`
-    - 当再次进入（前进或者后退）时，只触发activated，并且：`activated`,`deactivated`这两个生命周期函数一定是要在使用了`keep-alive`组件后才会有的，否则则不存在
+
+    - created > mounted > activated(进入时触发的钩子函数)
+
+    - 退出时触发deactivated
+
+    - 当再次进入（前进或者后退）时，只触发activated，并且：activated,deactivated这两个生命周期函数一定是要在使用了keep-alive组件后才会有的，否则则不存在
+
   ##### 缓存路由里面的页面
 
-  ```
+
+  ```js
   <!-- 所有路径匹配到的视图组件都会被缓存,像 elemnt-admin 这些框架，多级路由就不会全部缓存，需要参考官方文档 -->
   <keep-alive>
       <router-view>
@@ -96,7 +99,7 @@ Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`
   - 可以用`include`和`exclude`，但是如果组件太多的话会很麻烦，不是很好的选择
 
 
-  ```vue
+  ```js
   <!-- 只有路径匹配到的 include 为 c 的组件会被缓存 -->
   <keep-alive include="c">
       <router-view>
@@ -112,7 +115,7 @@ Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`
 
     
 
-  ```vue
+  ```js
   <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
   </keep-alive>
@@ -123,20 +126,20 @@ Vue渲染机制的优化上，引进了`virtual dom`的概念，它是用`Vnode`
 
   ```js
   {
-          path: '/',
-          name: 'C',
-          component: C,
-          meta: {
-              keepAlive: true // 需要被缓存
-          }
+    path: '/',
+    name: 'C',
+    component: C,
+    meta: {
+        keepAlive: true // 需要被缓存
+    }
   }
   {
-          path: '/',
-          name: 'J',
-          component: J,
-          meta: {
-              keepAlive: fslse // 不需要被缓存
-          }
+    path: '/',
+    name: 'J',
+    component: J,
+    meta: {
+        keepAlive: fslse // 不需要被缓存
+    }
   }
   ```
 

@@ -20,9 +20,9 @@ npm install next react react-dom
 
 安装完后的项目文件，pages是自己新建的，next默认的名称必须是pages
 
-```
+
 ![微信截图_20200416170503.png](https://i.loli.net/2020/04/16/wtMf56UbelGOBqm.png)
-```
+
 
 -  在 `package.json` 文件并添加 `scripts` 配置运行脚本：
 
@@ -38,7 +38,7 @@ npm install next react react-dom
 
 #### 支持css文件
 
-```
+```ssh
 yarn add @zeit/next-css
 #or
 npm install @zeit/next-css
@@ -106,7 +106,7 @@ module.exports = withCss({})
 
   - 根目录新建`tsconfig.json`文件并执行`npm run dev`,出现以下提示
 
-  ```js
+  ```ssh
   npm run dev
   # You'll see instructions like these:
   #
@@ -121,36 +121,36 @@ module.exports = withCss({})
 
   - `tsconfig.json`会生成如下配置，就可以使用`tsx`愉快的编写啦
 
-    ```js
-    {
-      "compilerOptions": {
-        "target": "es5",
-        "lib": [
-          "dom",
-          "dom.iterable",
-          "esnext"
-        ],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve"
-      },
-      "exclude": [
-        "node_modules"
+  ```js
+  {
+    "compilerOptions": {
+      "target": "es5",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
       ],
-      "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx", "pages/index.js"
-      ]
-    }
-    ```
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve"
+    },
+    "exclude": [
+      "node_modules"
+    ],
+    "include": [
+      "next-env.d.ts",
+      "**/*.ts",
+      "**/*.tsx", "pages/index.js"
+    ]
+  }
+  ```
 
     

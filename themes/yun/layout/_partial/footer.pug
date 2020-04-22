@@ -1,5 +1,4 @@
 footer#footer.sidebar-translate
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   if theme.footer.beian.enable
     .beian
       a(rel='noopener' href='http://www.beian.miit.gov.cn' target='_blank') #{theme.footer.beian.icp}
@@ -49,7 +48,7 @@ footer#footer.sidebar-translate
 
   if theme.busuanzi.enable
     include ../_third-party/analytics/busuanzi.pug
-
+    //- script(src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', defer)
   if theme.valine.enable
     include ../_third-party/analytics/valine-visitor.pug
 

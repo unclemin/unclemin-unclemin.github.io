@@ -4,12 +4,12 @@ avatar:
   opacity: 1
 # 社交图标
 social:
-  - name: RSS
-    # set rss in your root config
-    # https://github.com/hexojs/hexo-generator-feed
-    link: atom.xml # config.feed.path
-    icon: icon-rss-line
-    color: orange
+  # - name: RSS
+  #   # set rss in your root config
+  #   # https://github.com/hexojs/hexo-generator-feed
+  #   link: atom.xml # config.feed.path
+  #   icon: icon-rss-line
+  #   color: orange
   - name: QQ
     # https://isux.tencent.com/wp-content/uploads/2016/05/20160512101222609.pdf
     link: https://wpa.qq.com/msgrd?v=3&uin=571590938&site=qq&menu=yes
@@ -94,30 +94,49 @@ reward:
 # 版权
 creative_commons:
   license: by-nc-sa
-  post: false
+  post: true
   language: deed.zh
 # 页脚
 footer:
-  since: 2020
-icon:
-  name: icon-cloud-line
-  animated: true
-  color: "#0078E7"
+  since: 2019
+
+  # Icon between year and copyright info.
+  icon:
+    # `heart` is recommended with animation in red (#ff0000).
+    name: icon-cloud-line
+    # If you want to animate the icon, set it to true.
+    animated: true
+    # Change the color of icon, using Hex Code.
+    color: "#0078E7"
+
+  powered:
+    # Hexo link (Powered by Hexo).
+    enable: true
+    # Version info of Hexo after Hexo link (vX.X.X).
+    version: true
+
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.beian.miit.gov.cn
+  beian:
+    enable: false
+    # icp: 苏ICP备xxxxxxxx号
+
+  live_time:
+    enable: true
+    prefix: 本博客已运行
+    suffix: (●'◡'●)
+    start_time: "2019-08-12T00:00:00"
+
 # 默哀
 mourn:
   enable: true
   days:
     - "4-4"
-# 运行时间
-live_time:
-  enable: true
-  prefix: 本博客已活蹦乱跳地运行
-  suffix: (●'◡'●)
-  start_time: "2020-04-10T00:00:00"
 # google 分析
 google_analytics:
   enable: true
   id: UA-163425683-1
+
 busuanzi:
   enable: true
   site_uv: true
@@ -151,3 +170,14 @@ post_meta:
   updated_at: true
   categories: true
   tags: true
+# 随机多边形
+trianglify:
+  enable: false
+  cell_size: 75
+  width: 800
+  height: 600
+  palette: '["YlGnBu", "GnBu", "Purples", "Blues"]'
+  opacity: 0.5
+google_adsense:
+  enable: false
+  client: ca-pub-2245427233262012

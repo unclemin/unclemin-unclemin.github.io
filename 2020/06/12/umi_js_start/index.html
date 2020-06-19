@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="蚂蚁 umi.js 初体验"><meta name="keywords" content="react.js"><meta name="author"><meta name="copyright"><meta name="theme-color" content="#0078E7"><title>蚂蚁 umi.js 初体验 | cjm</title><link rel="shortcut icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script id="yun-config">
+    let Yun = window.Yun || {};
+    let CONFIG = {"root":"/","title":"刚刚好的小站","version":"0.5.0","anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><script src="//at.alicdn.com/t/font_1140697_9juba7x0cw.js" async></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://stats.g.doubleclick.net" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=UA-163425683-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-163425683-1');</script><meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-vsc-dark-plus.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle sidebar-toggle-fixed hty-icon-button"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><aside class="sidebar"><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc sidebar-nav-active hty-icon-button" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about"><img loading="lazy" src="https://mirror-gold-cdn.xitu.io/168e0917d2a9255e07b?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1"></a><div class="site-author-name"><a href="/about"></a></div><a class="site-name" href="/about/site.html">cjm</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item site-state-posts"><a href="/archives" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item site-state-categories"><a href="/categories" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">2</span></a></div><div class="site-state-item site-state-tags"><a href="/tags" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">6</span></a></div><a class="site-state-item hty-icon-button" href="/" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://wpa.qq.com/msgrd?v=3&amp;uin=571590938&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/unclemin" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:571590938@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div></div><script defer src="/js/sidebar.js"></script><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#umi-js-初体验"><span class="toc-number">1.</span> <span class="toc-text">umi js 初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装umi-js-并运行"><span class="toc-number">2.</span> <span class="toc-text">安装umi js,并运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置路由"><span class="toc-number">3.</span> <span class="toc-text">配置路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态管理dva"><span class="toc-number">4.</span> <span class="toc-text">状态管理dva</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">5.</span> <span class="toc-text">List of Products</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域配置"><span class="toc-number">6.</span> <span class="toc-text">跨域配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求封装-umi-request"><span class="toc-number">7.</span> <span class="toc-text">请求封装 umi-request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#umirc-ts配置"><span class="toc-number">8.</span> <span class="toc-text">.umirc.ts配置</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="post-block" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/umi_js_start/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name"><meta itemprop="description" content="蚂蚁 umi.js 初体验"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="cjm"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">蚂蚁 umi.js 初体验</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <span class="post-meta-icon-text">Posted on</span> <time title="Created: 2020-06-12 14:53:27" itemprop="dateCreated datePublished" datetime="2020-06-12T14:53:27+08:00">2020-06-12</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <span class="post-meta-icon-text">Edited on</span> <time title="Modified: 2020-06-19 09:53:07" itemprop="dateModified" datetime="2020-06-19T09:53:07+08:00">2020-06-19</time></div><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a class="category" href="/categories/web%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="text">web前端</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag" href="/tags/react-js/"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">react.js</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content post-markdown"><h2 id="umi-js-初体验"><a href="#umi-js-初体验" class="headerlink" title="umi js 初体验"></a><code>umi js</code> 初体验</h2><p><code>umi js</code>乌米是蚂蚁团队开发的前端应用框架，完全开箱即用，支持可配置路由和约定式路由，还有<code>dva</code> 的整合，状态管理使用更方便,相比官方的脚手架，基本使用的配置都已经配置好了</p>
+<p><a href="https://umijs.org/" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="安装umi-js-并运行"><a href="#安装umi-js-并运行" class="headerlink" title="安装umi js,并运行"></a>安装<code>umi js</code>,并运行</h2><p>这里使用的<code>yarn</code></p>
+<pre class="line-numbers language-shell"><code class="language-shell">yarn create @umijs/umi-app
+
+yarn
+
+yarn start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><p>这里使用的是配置路由，当然你也可以使用约定式路由，删除<code>routes</code>即可</p>
+<p>如果没有 <code>routes</code> 配置，<code>Umi</code> 会进入约定式路由模式，然后分析 <code>src/pages</code> 目录拿到路由配置。</p>
+<p><a href="https://umijs.org/zh-CN/docs/convention-routing" target="_blank" rel="noopener">路由文档</a></p>
+<pre class="line-numbers language-js"><code class="language-js">routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> <span class="token string">'@/pages/index'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/user'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> <span class="token string">'@/pages/user/user'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> <span class="token string">'/*'</span><span class="token punctuation">,</span>
+      component<span class="token punctuation">:</span> <span class="token string">'@/pages/error/404'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="状态管理dva"><a href="#状态管理dva" class="headerlink" title="状态管理dva"></a>状态管理<code>dva</code></h2><ul>
+<li>按照目录约定注册<code>model</code></li>
+<li>文件名字就是<code>namespace</code></li>
+<li>只需要通过配置开启即可使用</li>
+<li><a href="https://umijs.org/zh-CN/plugins/plugin-model" target="_blank" rel="noopener">https://umijs.org/zh-CN/plugins/plugin-model</a></li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// .umirc.js or ts 里面配置打开dva  </span>
+dva<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    immer<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    hmr<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>注意</li>
+</ul>
+<p>model 分两类，一是全局 model，二是页面 model。全局 model 存于 <code>/src/models/</code> 目录，所有页面都可引用；页面 model 不能被其他页面所引用</p>
+<p>​    <code>src</code>目录下面新建一个<code>models</code>文件夹，<code>user.ts</code>文件</p>
+<pre class="line-numbers language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    namespace<span class="token punctuation">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+    state<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'dva'</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token string">'dva'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'antd'</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token string">'antd'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    reducers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">delete</span><span class="token punctuation">(</span>state<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> payload<span class="token punctuation">:</span> id <span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> item<span class="token punctuation">.</span>id <span class="token operator">!==</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// namespace: '', // 表示在全局 state 上的 key</span>
+  <span class="token comment" spellcheck="true">// state: {}, // 状态数据</span>
+  <span class="token comment" spellcheck="true">//reducers: {}, // 管理同步方法，必须是纯函数</span>
+  <span class="token comment" spellcheck="true">//effects: {}, // 管理异步操作，采用了 generator 的相关概念</span>
+  <span class="token comment" spellcheck="true">//subscriptions: {}, // 订阅数据源</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​    <code>user.tsx</code>里面使用</p>
+<pre class="line-numbers language-tsx"><code class="language-tsx">import React, { useEffect } from 'react';
+import { connect } from 'dva'
+
+const   User = ({ dispatch, user }:any) => {
+  function handleDelete(id: any) {
+    dispatch({
+      type: 'user/delete',
+      payload: id,
+    });
+  }
+  useEffect(()=>{
+    console.log(user)
+  },[])
+  return (
+    <div>
+      <h2>List of Products</h2>
+    </div>
+  );
+};
+
+export default connect(({ user }:any) => ({
+    user,
+}))(User);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="跨域配置"><a href="#跨域配置" class="headerlink" title="跨域配置"></a>跨域配置</h2><p>在<code>.umirc.ts</code>里面配置</p>
+<pre class="line-numbers language-js"><code class="language-js">  proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'/api'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      target<span class="token punctuation">:</span> <span class="token string">'http://服务器地址'</span><span class="token punctuation">,</span>
+      pathRewrite<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">'^/api'</span><span class="token punctuation">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      changeOrigin<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="请求封装-umi-request"><a href="#请求封装-umi-request" class="headerlink" title="请求封装 umi-request"></a>请求封装 <code>umi-request</code></h2><pre class="line-numbers language-JS"><code class="language-JS">
+import { extend } from 'umi-request';
+import { notification } from 'antd';
+
+const codeMessage = {
+  200: '服务器成功返回请求的数据。',
+  201: '新建或修改数据成功。',
+  202: '一个请求已经进入后台排队（异步任务）。',
+  204: '删除数据成功。',
+  400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
+  401: '用户没有权限（令牌、用户名、密码错误）。',
+  403: '用户得到授权，但是访问是被禁止的。',
+  404: '发出的请求针对的是不存在的记录，服务器没有进行操作。',
+  406: '请求的格式不可得。',
+  410: '请求的资源被永久删除，且不会再得到的。',
+  422: '当创建一个对象时，发生一个验证错误。',
+  500: '服务器发生错误，请检查服务器。',
+  502: '网关错误。',
+  503: '服务不可用，服务器暂时过载或维护。',
+  504: '网关超时。',
+};
+
+/**
+ * 异常处理程序
+ */
+const errorHandler = (error:any) => {
+  const { response } = error;
+
+  if (response && response.status) {
+    let statusa = response.status
+    const errorText =  response.statusText;
+    const { status, url } = response;
+    notification.error({
+      message: `请求错误 ${status}: ${url}`,
+      description: errorText,
+    });
+  }
+
+  return response;
+};
+const request = extend({
+  errorHandler,
+  prefix:process.env.NODE_ENV == 'development' ? '/api' : 'http://www.aiyu97.online', // 分环境api  prefix地址记得加上http://
+  // 默认错误处理
+  credentials: 'include', // 默认请求是否带上cookie
+
+});
+
+// request拦截器, 改变url 或 options.
+request.interceptors.request.use((url,options) =>  {
+  console.log(process.env.NODE_ENV)
+  let c_token = localStorage.getItem("x-auth-token");
+  if (c_token) {
+    const headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'x-auth-token': c_token
+    };
+    return (
+      {
+        url: url,
+        options: { ...options, headers: headers },
+      }
+    );
+  } else {
+    const headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'x-auth-token': c_token
+    };
+    return (
+      {
+        url: url,
+        options: { ...options },
+      }
+    );
+  }
+
+})
+
+// response拦截器, 处理response
+request.interceptors.response.use((response, options) => {
+  console.log(options)
+  console.log(response)
+
+  let token = response.headers.get("x-auth-token");
+  if (token) {
+    localStorage.setItem("x-auth-token", token);
+  }
+  return response;
+});
+
+
+export default request;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'@/utils/request'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 测试登录</span>
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">Login</span><span class="token punctuation">(</span>params<span class="token punctuation">:</span> any<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token string">'/data'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 请求方式</span>
+        method<span class="token punctuation">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// 用data包裹参数是官方指定写法，如果data有参数umi-request会默认读取data里面参数。</span>
+        data<span class="token punctuation">:</span> params
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="umirc-ts配置"><a href="#umirc-ts配置" class="headerlink" title=".umirc.ts配置"></a><code>.umirc.ts</code>配置</h2><pre class="line-numbers language-js"><code class="language-js">  base<span class="token punctuation">:</span> <span class="token string">'/web/'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//部署到非根目录时才需配置</span>
+  targets<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//配置浏览器最低版本,比如兼容ie11</span>
+   ie<span class="token punctuation">:</span> <span class="token number">11</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//开启打包文件的hash值后缀</span>
+  treeShaking<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//去除那些引用的但却没有使用的代码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong></li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://yoursite.com/2020/06/12/umi_js_start/" title="蚂蚁 umi.js 初体验">http://yoursite.com/2020/06/12/umi_js_start/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless stating additionally.</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2020/06/12/react_js_webpack/" rel="prev" title="react.js 打包优化"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">react.js 打包优化</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2020/04/22/vue3.0_bata/" rel="next" title="Vue 3.0 bate版尝鲜"><span class="post-nav-text">Vue 3.0 bate版尝鲜</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div id="comment"><div class="comment-tooltip text-center"><span>若您无 GitHub 账号，可直接在下方匿名评论。</span><br><span>若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br><a class="hty-button hty-button--raised" id="github-issues" href="https://github.com/YunYouJun/yunyoujun.github.io/issues?q=is:issue+蚂蚁 umi.js 初体验" target="_blank" rel="noopener">GitHub Issues</a></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2020 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> </span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v4.2.1</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v0.5.0</span></div><div class="live_time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  window.setTimeout(blog_live_time, 1000);
+  const start = new Date('2019-08-12T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>let date = new Date();
+let today = (date.getMonth() + 1) + "-" + date.getDate()
+if ("4-4".indexOf(today) !== -1) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div><script defer src="/js/utils.js"></script><script defer src="/js/hexo-theme-yun.js"></script></body></html>
